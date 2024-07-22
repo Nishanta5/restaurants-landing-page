@@ -10,8 +10,8 @@
         />
         <style>
             .hero {
-                background: url("/pexels-pixabay-260922.jpg") center center
-                    no-repeat;
+                background: url("./photos/pexels-pixabay-260922.jpg") center
+                    center no-repeat;
                 background-size: cover;
                 height: 400px;
                 color: white;
@@ -20,6 +20,7 @@
                 align-items: center;
                 justify-content: center;
                 flex-direction: column;
+                position: relative;
             }
             .menu-item {
                 margin-bottom: 20px;
@@ -27,50 +28,72 @@
             .menu-item h5 {
                 margin-bottom: 10px;
             }
+
+            .hero .overlay {
+                background-color: rgba(
+                    0,
+                    0,
+                    0,
+                    0.7
+                ); /* Adjust the opacity as needed */
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                z-index: 1;
+            }
+            .hero .text {
+                z-index: 2;
+            }
         </style>
     </head>
     <body>
         <!-- Navigation Bar -->
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">Piyaz's</a>
-            <button
-                class="navbar-toggler"
-                type="button"
-                data-toggle="collapse"
-                data-target="#navbarNav"
-                aria-controls="navbarNav"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-            >
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#home">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#menu">Menu</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
-                    </li>
-                </ul>
+            <div class="container">
+                <a class="navbar-brand" href="#">Piyaz's</a>
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#navbarNav"
+                    aria-controls="navbarNav"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#home">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#menu">Menu</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact">Contact</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </nav>
 
         <!-- Hero Section -->
         <section id="home" class="hero">
-            <h1>Welcome to Restaurant Piyaz's</h1>
-            <p>Delicious food, friendly service</p>
-            <img
-                src="photos/pexels-pixabay-260922.jpg"
-                class="img-fluid"
-                alt=""
-            />
+            <div class="overlay"></div>
+            <div class="container text">
+                <div class="row">
+                    <div class="col-12">
+                        <h1>Welcome to Restaurant Piyaz's</h1>
+                        <p>Delicious food, friendly service</p>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <!-- Menu Section -->
@@ -85,7 +108,7 @@
                         bun. Delicious!.
                     </p>
                     <img
-                        src="/pexels-pixabay-327158.jpg"
+                        src="./photos/pexels-pixabay-327158.jpg"
                         class="img-fluid"
                         alt=""
                     />
@@ -98,7 +121,7 @@
                         classic coleslaw. Scrumptious!.
                     </p>
                     <img
-                        src="/victoria-shes-UC0HZdUitWY-unsplash.jpg"
+                        src="./photos/victoria-shes-UC0HZdUitWY-unsplash.jpg"
                         class="img-fluid"
                         alt=""
                     />
@@ -111,7 +134,7 @@
                         fruity delight. Enjoy!.
                     </p>
                     <img
-                        src="/pexels-karthik-reddy-130698-397913.jpg"
+                        src="./photos/pexels-karthik-reddy-130698-397913.jpg"
                         class="img-fluid"
                         alt=""
                     />
@@ -144,7 +167,7 @@
                             </div>
                             <div class="col-6">
                                 <img
-                                    src="/yoav-hornung-Qg6lPXJ6IL4-unsplash.jpg"
+                                    src="./photos/yoav-hornung-Qg6lPXJ6IL4-unsplash.jpg"
                                     class="img-fluid"
                                     alt=""
                                 />
@@ -157,41 +180,53 @@
 
         <!-- Contact Section -->
 
-        <section id="contact" class="container my-5 bg-info">
-            <h2 class="text-center">Contact Us</h2>
-            <div class="container-fluid">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-6 form-group mb-4">
-                            <label for="name">Name</label>
-                            <input
-                                type="text"
-                                class="form-control"
-                                id="name"
-                                placeholder="Your name"
-                            />
-                            <label for="email">Email address</label>
-                            <input
-                                type="email"
-                                class="form-control"
-                                id="email"
-                                placeholder="Your email"
-                            />
-                            <label for="message">Message</label>
-                            <textarea
-                                class="form-control"
-                                id="message"
-                                rows="3"
-                                placeholder="Your message"
-                            ></textarea>
+        <section id="contact" class="container my-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h2 class="text-center">Contact Us</h2>
+                    </div>
+                </div>
+                <div class="row align-items-center">
+                    <div class="col-6 form-group mb-4">
+                        <div class="card border-0 shadow">
+                            <div class="card-body">
+                                <div class="mb-3">
+                                    <label for="name">Name</label>
+                                    <input
+                                        type="text"
+                                        class="form-control"
+                                        id="name"
+                                        placeholder="Your name"
+                                    />
+                                </div>
+                                <div class="mb-3">
+                                    <label for="email">Email address</label>
+                                    <input
+                                        type="email"
+                                        class="form-control"
+                                        id="email"
+                                        placeholder="Your email"
+                                    />
+                                </div>
+                                <div class="mb-3">
+                                    <label for="message">Message</label>
+                                    <textarea
+                                        class="form-control"
+                                        id="message"
+                                        rows="3"
+                                        placeholder="Your message"
+                                    ></textarea>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-6">
-                            <img
-                                src="/quino-al-xhGMQ_nYWqU-unsplash.jpg"
-                                class="img-fluid"
-                                alt=""
-                            />
-                        </div>
+                    </div>
+                    <div class="col-6">
+                        <img
+                            src="./photos/quino-al-xhGMQ_nYWqU-unsplash.jpg"
+                            class="img-fluid"
+                            alt=""
+                        />
                     </div>
                 </div>
             </div>
